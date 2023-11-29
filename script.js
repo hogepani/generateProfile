@@ -36,6 +36,7 @@ function generateImage() {
   
   // 生成された画像を表示
   textCanvas.style.maxWidth = "100%"; // 画像の最大幅を親要素に合わせる
+  textCanvas.style.display = "none";
   // textCanvas.style.display = "block";
 
   // 生成された画像をCanvasから取得
@@ -76,11 +77,11 @@ function generateImage() {
   //   }
   // });
   
-  // 画像を長押しして別タブで開く
-  textCanvas.addEventListener("touchstart", function(event) {
-    event.preventDefault(); // デフォルトの動作をキャンセル（選択メニューを表示するのを防ぐ）
+  // 生成された画像をCanvasから取得
+  var generatedImageDataUrl = textCanvas.toDataURL("image/jpeg");
 
-    // 新しいウィンドウまたはタブを開く
-    window.open(textCanvas.toDataURL(), '_blank');
-  });
+  // 生成された画像を表示
+  generatedImage.src = generatedImageDataUrl;
+  generatedImage.style.maxWidth = "100%"; // 画像の最大幅を親要素に合わせる
+
 }
