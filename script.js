@@ -56,7 +56,7 @@ function generateImage() {
   // });
 
   // 画像をクリックしてシェアダイアログを表示
-  textCanvas.addEventListener("touchstart", function() {
+  textCanvas.addEventListener("touchstart", function(event) {
     if (navigator.share) {
       navigator.share({
         title: "Generated Image",
