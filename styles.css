@@ -4,22 +4,47 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  text-align: center;
   background-color: #f0f0f0;
 }
 
 .container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input.left-align {
   text-align: left;
+  width: 80%;
+  margin-bottom: 10px;
 }
 
 button {
   padding: 5px 10px;
   cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  input.left-align {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* タイトルのスタイルを調整 */
+h1 {
+  font-size: 1.5em; /* スマートフォン用に調整 */
+}
+
+@media (min-width: 600px) {
+  /* 画面幅が600px以上の場合のスタイル */
+  h1 {
+    font-size: 2em; /* タブレットやデスクトップ用に調整 */
+  }
 }
