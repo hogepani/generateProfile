@@ -41,4 +41,11 @@ function generateImage() {
   // 生成された画像を表示
   textCanvas.style.maxWidth = "100%"; // 画像の最大幅を親要素に合わせる
   textCanvas.style.display = "block";
+
+  // 生成された画像をダウンロード可能なリンクとして提供
+  var downloadLink = document.createElement("a");
+  downloadLink.href = generatedImageDataUrl;
+  downloadLink.download = "generated_image.jpg";
+  document.body.appendChild(downloadLink);
+  
 }
