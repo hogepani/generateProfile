@@ -45,12 +45,10 @@ function generateImage() {
   // 生成された画像をCanvasから取得
   var generatedImageDataUrl = textCanvas.toDataURL("image/jpeg");
 
-  // 生成された画像をダウンロード可能なリンクとして提供
-  var downloadLink = document.createElement("a");
-  downloadLink.href = generatedImageDataUrl;
-  downloadLink.download = "generated_image.jpg";
-  document.body.appendChild(downloadLink);
- 
+  // 生成された画像を表示
+  generatedImage.src = generatedImageDataUrl;
+  generatedImage.style.maxWidth = "100%"; // 画像の最大幅を親要素に合わせる
+  
    // スマートフォンで長押しして画像をダウンロードできるようにする
   generatedImage.addEventListener("touchstart", function(event) {
     var downloadLink = document.createElement("a");
