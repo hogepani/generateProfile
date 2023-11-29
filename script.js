@@ -47,5 +47,15 @@ function generateImage() {
   downloadLink.href = generatedImageDataUrl;
   downloadLink.download = "generated_image.jpg";
   document.body.appendChild(downloadLink);
-  
+ 
+   // スマートフォンで長押しして画像をダウンロードできるようにする
+  generatedImage.addEventListener("touchstart", function(event) {
+    var downloadLink = document.createElement("a");
+    downloadLink.href = generatedImageDataUrl;
+    downloadLink.download = "generated_image.jpg";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  });
+ 
 }
