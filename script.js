@@ -77,7 +77,7 @@ function generateImage() {
   // });
   
   // 画像を長押しして別タブで開く
-  generatedImage.addEventListener("touchstart", function(event) {
+  textCanvas.addEventListener("touchstart", function(event) {
     event.preventDefault(); // デフォルトの動作をキャンセル（選択メニューを表示するのを防ぐ）
 
     // 新しいウィンドウまたはタブを開く
