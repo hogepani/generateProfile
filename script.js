@@ -9,6 +9,7 @@ function generateImage() {
   // ベースとなる画像とCanvas要素を取得
   var baseImage = document.getElementById("baseImage");
   var textCanvas = document.getElementById("textCanvas");
+  var generatedImage = document.getElementById("generatedImage");
   var ctx = textCanvas.getContext("2d");
 
   // ベース画像を非表示にする
