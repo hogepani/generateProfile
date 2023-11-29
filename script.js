@@ -39,7 +39,7 @@ function generateImage() {
   // textCanvas.style.display = "block";
 
   // 生成された画像をCanvasから取得
-  // var generatedImageDataUrl = textCanvas.toDataURL();
+  var generatedImageDataUrl = textCanvas.toDataURL();
 
   // 生成された画像を表示
   // generatedImage.src = generatedImageDataUrl;
@@ -61,14 +61,14 @@ function generateImage() {
       navigator.share({
         title: "Generated Image",
         text: "Check out this generated image!",
-        url: textCanvas.toDataURL(),
+        url: generatedImageDataUrl,
       })
       .then(() => console.log("Shared successfully"))
       .catch((error) => console.error("Error sharing:", error));
     } else {
       // ブラウザがnavigator.shareをサポートしていない場合、ダウンロード用のリンクを作成
       var downloadLink = document.createElement("a");
-      downloadLink.href = textCanvas.toDataURL();
+      downloadLink.href = generatedImageDataUrl;
       downloadLink.download = "generated_image.jpg";
       document.body.appendChild(downloadLink);
       downloadLink.click();
