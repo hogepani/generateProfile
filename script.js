@@ -36,7 +36,7 @@ function generateImage() {
   
   // 生成された画像を表示
   textCanvas.style.maxWidth = "100%"; // 画像の最大幅を親要素に合わせる
-  textCanvas.style.display = "block";
+  // textCanvas.style.display = "block";
 
   // 生成された画像をCanvasから取得
   // var generatedImageDataUrl = textCanvas.toDataURL();
@@ -56,7 +56,7 @@ function generateImage() {
   // });
 
   // 画像をクリックしてシェアダイアログを表示
-  textCanvas.addEventListener("click", function() {
+  textCanvas.addEventListener("touchstart", function() {
     if (navigator.share) {
       navigator.share({
         title: "Generated Image",
