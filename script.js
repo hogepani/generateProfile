@@ -37,10 +37,13 @@ function generateImage() {
 
   // ベース画像を非表示にする
   baseImage.style.display = "none";
-
+  
   // 生成された画像を表示
   textCanvas.style.maxWidth = "100%"; // 画像の最大幅を親要素に合わせる
   textCanvas.style.display = "block";
+
+  // 生成された画像をCanvasから取得
+  var generatedImageDataUrl = textCanvas.toDataURL("image/jpeg");
 
   // 生成された画像をダウンロード可能なリンクとして提供
   var downloadLink = document.createElement("a");
