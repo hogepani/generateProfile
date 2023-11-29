@@ -46,14 +46,14 @@ function generateImage() {
   // generatedImage.style.maxWidth = "100%"; // 画像の最大幅を親要素に合わせる
   
   // スマートフォンで長押しして画像をダウンロードできるようにする
-  // textCanvas.addEventListener("touchstart", function() {
-  //   var downloadLink = document.createElement("a");
-  //   downloadLink.href = textCanvas.toDataURL();
-  //   downloadLink.download = "generated_image.jpg";
-  //   document.body.appendChild(downloadLink);
-  //   downloadLink.click();
-  //   document.body.removeChild(downloadLink);
-  // });
+  textCanvas.addEventListener("touchstart", function() {
+    var downloadLink = document.createElement("a");
+    downloadLink.href = generatedImageDataUrl;
+    downloadLink.download = "generated_image.jpg";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  });
 
   // ダウンロードリンクを生成して出力
   var dlLink = document.createElement('a');
@@ -62,25 +62,25 @@ function generateImage() {
   dlLink.innerText = 'ダウンロード';
     
   // 画像をクリックしてシェアダイアログを表示
-  textCanvas.addEventListener("touchstart", function() {
-    if (navigator.share) {
-      navigator.share({
-        title: "Generated Image",
-        text: "Check out this generated image!",
-        url: generatedImageDataUrl,
-      })
-      .then(() => console.log("Shared successfully"))
-      .catch((error) => console.error("Error sharing:", error));
-    } else {
-      // ブラウザがnavigator.shareをサポートしていない場合、ダウンロード用のリンクを作成
-      var downloadLink = document.createElement("a");
-      downloadLink.href = generatedImageDataUrl;
-      downloadLink.download = "generated_image.jpg";
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-    }
-  });
+  // textCanvas.addEventListener("touchstart", function() {
+  //   if (navigator.share) {
+  //     navigator.share({
+  //       title: "Generated Image",
+  //       text: "Check out this generated image!",
+  //       url: generatedImageDataUrl,
+  //     })
+  //     .then(() => console.log("Shared successfully"))
+  //     .catch((error) => console.error("Error sharing:", error));
+  //   } else {
+  //     // ブラウザがnavigator.shareをサポートしていない場合、ダウンロード用のリンクを作成
+  //     var downloadLink = document.createElement("a");
+  //     downloadLink.href = generatedImageDataUrl;
+  //     downloadLink.download = "generated_image.jpg";
+  //     document.body.appendChild(downloadLink);
+  //     downloadLink.click();
+  //     document.body.removeChild(downloadLink);
+  //   }
+  // });
   
   // 生成された画像をCanvasから取得
   // var generatedImageDataUrl = textCanvas.toDataURL("image/jpeg");
