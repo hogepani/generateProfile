@@ -48,3 +48,15 @@ h1 {
     font-size: 2em; /* タブレットやデスクトップ用に調整 */
   }
 }
+
+
+#generatedImageContainer {
+  max-width: 100%;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+#generatedImage {
+  max-width: 100%;
+  height: auto;
+}

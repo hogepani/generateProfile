@@ -9,16 +9,11 @@ function generateImage() {
   // ベースとなる画像とCanvas要素を取得
   var baseImage = document.getElementById("baseImage");
   var textCanvas = document.getElementById("textCanvas");
-  var generatedImage = document.getElementById("generatedImage");
+  // var generatedImage = document.getElementById("generatedImage");
   var ctx = textCanvas.getContext("2d");
 
   // ベース画像を非表示にする
   baseImage.style.display = "none";
-
-  // ベースとなる画像とCanvas要素を取得
-  var baseImage = document.getElementById("baseImage");
-  var textCanvas = document.getElementById("textCanvas");
-  var ctx = textCanvas.getContext("2d");
 
   // Canvasのサイズをベース画像と同じに設定
   textCanvas.width = baseImage.width;
@@ -41,19 +36,19 @@ function generateImage() {
   
   // 生成された画像を表示
   textCanvas.style.maxWidth = "100%"; // 画像の最大幅を親要素に合わせる
-  textCanvas.style.display = "block";
+  // textCanvas.style.display = "block";
 
   // 生成された画像をCanvasから取得
-  var generatedImageDataUrl = textCanvas.toDataURL("image/jpeg");
+  // var generatedImageDataUrl = textCanvas.toDataURL();
 
   // 生成された画像を表示
   // generatedImage.src = generatedImageDataUrl;
   // generatedImage.style.maxWidth = "100%"; // 画像の最大幅を親要素に合わせる
   
-   // スマートフォンで長押しして画像をダウンロードできるようにする
+  // スマートフォンで長押しして画像をダウンロードできるようにする
   textCanvas.addEventListener("touchstart", function(event) {
     var downloadLink = document.createElement("a");
-    downloadLink.href = generatedImageDataUrl;
+    downloadLink.href = textCanvas.toDataURL();
     downloadLink.download = "generated_image.jpg";
     document.body.appendChild(downloadLink);
     downloadLink.click();
