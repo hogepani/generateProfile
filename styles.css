@@ -1,0 +1,25 @@
+/* styles.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.container {
+  text-align: center;
+}
+
+input.left-align {
+  text-align: left;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}

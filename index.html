@@ -1,0 +1,36 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>パニガーレMTG用ネームプレートジェネレーター</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>パニガーレMTG用</br>ネームプレートジェネレーター</h1>
+    <div>
+      <label for="inputText1">　　名前:</label>
+      <input type="text" id="inputText1" class="left-align">
+      <br>
+      <label for="inputText2">生息地域:</label>
+      <input type="text" id="inputText2" class="left-align">
+      <br>
+      <label for="inputText3">　　ＩＤ:</label>
+      <input type="text" id="inputText3" class="left-align">
+      <br>
+      <label for="inputText4">　　車種:</label>
+      <input type="text" id="inputText4" class="left-align">
+      <br>
+      <button onclick="generateImage()">生成する</button>
+    </div>
+    <div>
+      <img id="baseImage" src="base-image.jpg" alt="Base Image">
+      <canvas id="textCanvas"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
